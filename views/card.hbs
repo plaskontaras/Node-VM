@@ -1,0 +1,25 @@
+<h1>Basket</h1>
+{{#if courses.length}}
+    <table>
+        <thead> 
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {{#each courses}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{count}}</td>
+                <td>
+                    <button class="btn btn-small">delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <p><strong>Sum:</strong><span class="price">{{price}}</span></p>
+{{else}}
+    <p>You did not choose any courses</p>
+{{/if}}
