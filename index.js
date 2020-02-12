@@ -1,5 +1,5 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const exphbs = require('express-handlebars');
 
 const homeRouter = require('./routes/home');
@@ -19,7 +19,7 @@ app.engine('hbs', hbs.engine);// registration hbs in express
 app.set('view engine', 'hbs');// set field view engine
 app.set('views','views');// set folder views as layouts folder
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
 
 // app.get('/', (req,res) => {
